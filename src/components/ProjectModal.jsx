@@ -7,7 +7,13 @@ export const ProjectModal = ({ project, onClose, onOpenInquiry }) => {
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    // Lock page scroll while the modal is open
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = prevOverflow;
+    };
   }, [onClose]);
 
   if (!project) return null;

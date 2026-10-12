@@ -11,7 +11,7 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
 import { profileData } from './data/profile';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, Zap } from 'lucide-react';
 
 export function App() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -38,11 +38,14 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-brand-dark text-slate-100 flex flex-col selection:bg-brand-cyan selection:text-brand-dark">
+      {/* Skip link for keyboard users */}
+      <a href="#main-content" className="skip-link">Skip to main content</a>
+
       {/* Fixed Navbar with live availability indicator */}
       <Navbar onOpenInquiry={() => handleOpenInquiry()} />
 
       {/* Main Content Sections */}
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         <Hero onOpenInquiry={() => handleOpenInquiry()} />
         <Services onSelectService={handleSelectService} />
         <Portfolio 
@@ -75,7 +78,7 @@ export function App() {
       <aside aria-label="Quick WhatsApp Contact" className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-1.5 pointer-events-none">
         <div className="pointer-events-auto hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/90 border border-emerald-500/30 text-[11px] font-mono text-emerald-300 shadow-2xl backdrop-blur-md animate-bounce">
           <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span>⚡ Fast Reply: &lt; 15 mins</span>
+          <span className="inline-flex items-center gap-1"><Zap className="w-3 h-3" /> Fast Reply: &lt; 15 mins</span>
         </div>
         <a
           href={profileData.socials.whatsappUrl}

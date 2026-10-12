@@ -214,7 +214,7 @@ export const ContactSection = ({ prefilledService, prefilledSubject }) => {
                   <Github className="w-5 h-5 text-slate-300 group-hover:text-white" />
                   <div>
                     <div className="text-sm font-semibold text-white">GitHub</div>
-                    <div className="text-xs text-slate-400 font-mono">@ShahbazMazari • Open Source</div>
+                    <div className="text-xs text-slate-400 font-mono">@shahbazahmadmazari • Open Source</div>
                   </div>
                 </div>
                 <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-white group-hover:translate-x-0.5 transition-transform" />
@@ -375,12 +375,14 @@ export const ContactSection = ({ prefilledService, prefilledSubject }) => {
                   {/* Name & Email */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                      <label htmlFor="contact-name" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
                         Your Name *
                       </label>
                       <input
                         type="text"
                         name="name"
+                        id="contact-name"
+                        autoComplete="name"
                         required
                         value={formData.name}
                         onChange={handleChange}
@@ -390,12 +392,14 @@ export const ContactSection = ({ prefilledService, prefilledSubject }) => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                      <label htmlFor="contact-email" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
                         Your Email *
                       </label>
                       <input
                         type="email"
                         name="email"
+                        id="contact-email"
+                        autoComplete="email"
                         required
                         value={formData.email}
                         onChange={handleChange}
@@ -407,11 +411,12 @@ export const ContactSection = ({ prefilledService, prefilledSubject }) => {
 
                   {/* Service Needed Dropdown */}
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                    <label htmlFor="contact-service" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
                       Service Needed *
                     </label>
                     <select
                       name="service"
+                        id="contact-service"
                       value={formData.service}
                       onChange={handleChange}
                       className="w-full px-4 py-2.5 rounded-xl bg-brand-dark border border-white/[0.1] focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan text-white text-sm outline-none transition-all"
@@ -429,11 +434,12 @@ export const ContactSection = ({ prefilledService, prefilledSubject }) => {
                   {/* Budget & Timeline Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                      <label htmlFor="contact-budget" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
                         Project Budget Range
                       </label>
                       <select
                         name="budget"
+                        id="contact-budget"
                         value={formData.budget}
                         onChange={handleChange}
                         className="w-full px-4 py-2.5 rounded-xl bg-brand-dark border border-white/[0.1] focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan text-white text-sm outline-none transition-all"
@@ -446,11 +452,12 @@ export const ContactSection = ({ prefilledService, prefilledSubject }) => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                      <label htmlFor="contact-timeline" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
                         Target Timeline
                       </label>
                       <select
                         name="timeline"
+                        id="contact-timeline"
                         value={formData.timeline}
                         onChange={handleChange}
                         className="w-full px-4 py-2.5 rounded-xl bg-brand-dark border border-white/[0.1] focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan text-white text-sm outline-none transition-all"
@@ -465,11 +472,12 @@ export const ContactSection = ({ prefilledService, prefilledSubject }) => {
 
                   {/* Message / Scope */}
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                    <label htmlFor="contact-message" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
                       Project Details & Scope *
                     </label>
                     <textarea
                       name="message"
+                        id="contact-message"
                       required
                       rows={4}
                       value={formData.message}

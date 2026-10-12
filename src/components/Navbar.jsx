@@ -31,6 +31,14 @@ export const Navbar = ({ onOpenInquiry }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock page scroll while the mobile drawer is open
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { label: 'Services', href: '#services', id: 'services' },
     { label: 'Work', href: '#work', id: 'work' },

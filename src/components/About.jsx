@@ -77,6 +77,8 @@ export const About = () => {
                     src={profileData.avatar} 
                     alt={profileData.name} 
                     className="w-full h-full object-cover rounded-full"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                 </div>

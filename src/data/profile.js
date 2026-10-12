@@ -35,7 +35,7 @@ export const profileData = {
     email: "shahbaz.ahmad.mazari@gmail.com",
     whatsapp: "+92 330 6320436",
     whatsappUrl: "https://wa.me/923306320436?text=Hi%20Shahbaz,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!",
-    github: "https://github.com/shahbazahmadmazari10",
+    github: "https://github.com/shahbazahmadmazari",
     linkedin: "https://www.linkedin.com/in/shahbaz-ahmad-mazari-86a196247/",
     fiverr: "https://www.fiverr.com/shahbazmazari1",
     chromeStore: "https://chromewebstore.google.com/detail/ioohgofepmocbefekcfpphjononkobdj",

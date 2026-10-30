@@ -189,7 +189,7 @@ export const Portfolio = ({ onOpenProject, onOpenInquiry }) => {
               }`}
             >
               <span>{tab.label}</span>
-              <span className={`text-[11px] px-1.5 py-0.2 rounded-full ${
+              <span className={`text-[11px] px-1.5 py-0.5 rounded-full ${
                 activeFilter === tab.id ? 'bg-black/20 text-brand-dark font-mono font-bold' : 'bg-white/10 text-slate-400 font-mono'
               }`}>
                 {tab.count}

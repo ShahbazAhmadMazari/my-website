@@ -51,12 +51,12 @@ export const skillsData = [
     icon: "Smartphone",
     color: "emerald",
     skills: [
-      { name: "Android Studio & Toolchain", level: "Advanced", pct: 90, tag: "IDE & Tooling" },
+      { name: "Autonomous Mobile AI Agents", level: "Expert", pct: 96, tag: "Accessibility & Cross-App Automation" },
+      { name: "Chrome Extension to Mobile Porting", level: "Expert", pct: 95, tag: "MV3 to Native Android / iOS" },
+      { name: "Android Studio & Toolchain", level: "Advanced", pct: 92, tag: "IDE & Gradle Tooling" },
       { name: "Kotlin Coroutines & Flow", level: "Advanced", pct: 90, tag: "Async Concurrency" },
-      { name: "Room & SQLite DB", level: "Proficient", pct: 86, tag: "Offline Data Sync" },
-      { name: "Mobile Plugins & Extensions", level: "Proficient", pct: 88, tag: "Modular Architecture" },
-      { name: "Material Design 3", level: "Advanced", pct: 92, tag: "Modern Android UI" },
-      { name: "Custom Canvas 2D Engine", level: "Proficient", pct: 84, tag: "Game Physics & Rendering" }
+      { name: "Material Design 3 & Jetpack Compose", level: "Advanced", pct: 92, tag: "Modern Reactive UI" },
+      { name: "Custom Canvas 2D Engine", level: "Proficient", pct: 86, tag: "SurfaceView & Physics Loops" }
     ]
   },
   {

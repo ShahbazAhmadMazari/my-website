@@ -114,25 +114,32 @@ class AutonomousDeviceAgentService : AccessibilityService() {
               {/* Pulsing glow ring */}
               <div className="absolute -inset-1.5 bg-gradient-to-r from-brand-cyan via-brand-emerald to-brand-cyan rounded-full blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
               
-              {/* Avatar Frame */}
-              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-brand-dark ring-2 ring-white/10 flex items-center justify-center overflow-hidden">
-                {!avatarError ? (
-                  <img 
-                    src={profileData.avatar} 
-                    alt={profileData.name} 
-                    className="w-full h-full object-cover rounded-full shadow-2xl transition-transform duration-300 group-hover:scale-105"
-                    onError={() => setAvatarError(true)}
-                  />
-                ) : (
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-brand-cyan/20 to-brand-emerald/20 flex items-center justify-center text-white font-extrabold text-2xl">
-                    SZ
-                  </div>
-                )}
+              {/* Outer Avatar Frame (No overflow-hidden so beacon is 100% unclipped and prominent) */}
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-brand-dark ring-2 ring-white/15 shadow-2xl">
+                {/* Inner Image Frame (overflow-hidden keeps image circular) */}
+                <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center bg-slate-900">
+                  {!avatarError ? (
+                    <img 
+                      src={profileData.avatar} 
+                      alt={profileData.name} 
+                      className="w-full h-full object-cover rounded-full shadow-2xl transition-transform duration-300 group-hover:scale-105"
+                      onError={() => setAvatarError(true)}
+                    />
+                  ) : (
+                    <div className="w-full h-full rounded-full bg-gradient-to-br from-brand-cyan/20 to-brand-emerald/20 flex items-center justify-center text-white font-extrabold text-2xl">
+                      SZ
+                    </div>
+                  )}
+                </div>
                 
-                {/* Live Activity Beacon */}
-                <span className="absolute bottom-1 right-1 flex h-5 w-5" title="Available for new client projects">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-5 w-5 bg-emerald-500 border-2 border-brand-dark items-center justify-center">
+                {/* Live Activity Beacon (Placed at bottom-right corner, fully visible, outside overflow-hidden) */}
+                <span 
+                  className="absolute bottom-0 right-0 z-20 flex h-6 w-6 items-center justify-center" 
+                  title="Available for new client projects"
+                  aria-label="Online and available for client projects"
+                >
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-80"></span>
+                  <span className="relative inline-flex rounded-full h-4.5 w-4.5 bg-emerald-500 border-2 border-slate-950 items-center justify-center shadow-lg shadow-emerald-500/50">
                     <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
                   </span>
                 </span>
@@ -244,7 +251,7 @@ class AutonomousDeviceAgentService : AccessibilityService() {
                 <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                 <span className="text-xs font-mono text-slate-400 ml-2 flex items-center gap-1.5">
                   <Terminal className="w-3.5 h-3.5 text-brand-cyan" />
-                  shahbaz-engine ~ {activeCodeTab === 'extension' ? 'service_worker.js' : activeCodeTab === 'web' ? 'route.ts' : 'GameEngine.kt'}
+                  shahbaz-engine ~ {activeCodeTab === 'extension' ? 'service_worker.js' : activeCodeTab === 'web' ? 'route.ts' : 'AutonomousAgentService.kt'}
                 </span>
               </div>
 
@@ -279,7 +286,7 @@ class AutonomousDeviceAgentService : AccessibilityService() {
                         : 'text-slate-400 hover:text-slate-200'
                     }`}
                   >
-                    Kotlin Native
+                    Autonomous Mobile AI
                   </button>
                 </div>
 
@@ -310,7 +317,7 @@ class AutonomousDeviceAgentService : AccessibilityService() {
                 <span className="w-2 h-2 rounded-full bg-brand-cyan"></span>
                 {activeCodeTab === 'extension' && 'Chrome Extension Automation Core (Manifest V3 Background Service Worker)'}
                 {activeCodeTab === 'web' && 'Next.js 14 Streaming RAG Route with Google Gemini 1.5 Pro'}
-                {activeCodeTab === 'mobile' && 'JF-17 Thunder 60FPS Native Surface Canvas Physics Engine in Kotlin'}
+                {activeCodeTab === 'mobile' && 'Android Autonomous Device Agent & UI Automator in Kotlin'}
               </div>
 
               {activeCodeTab === 'extension' && (
@@ -361,23 +368,19 @@ class AutonomousDeviceAgentService : AccessibilityService() {
               {activeCodeTab === 'mobile' && (
                 <pre className="text-slate-200 whitespace-pre font-mono">
                   <code>
-                    <span className="token-comment">// Native Android Canvas Physics Loop in Kotlin</span>{'\n'}
-                    <span className="token-keyword">class</span> <span className="token-function">FlightCombatLoop</span>(<span className="token-keyword">private val</span> view: SurfaceView) : Runnable &#123;{'\n'}
-                    {'    '}<span className="token-keyword">@Volatile private var</span> isRunning = <span className="token-keyword">true</span>{'\n\n'}
-                    {'    '}<span className="token-keyword">override fun</span> <span className="token-function">run</span>() &#123;{'\n'}
-                    {'        '}<span className="token-keyword">while</span> (isRunning) &#123;{'\n'}
-                    {'            '}<span className="token-keyword">val</span> canvas = view.holder.<span className="token-function">lockCanvas</span>() ?: <span className="token-keyword">continue</span>{'\n'}
-                    {'            '}<span className="token-keyword">try</span> &#123;{'\n'}
-                    {'                '}<span className="token-keyword">synchronized</span>(view.holder) &#123;{'\n'}
-                    {'                    '}jetPhysics.<span className="token-function">update</span>(deltaTime = <span className="token-number">0.016f</span>){'\n'}
-                    {'                    '}weaponSystem.<span className="token-function">detectCollisions</span>(){'\n'}
-                    {'                    '}renderer.<span className="token-function">drawFrame</span>(canvas){'\n'}
-                    {'                '}&#125;{'\n'}
-                    {'            '}&#125; <span className="token-keyword">finally</span> &#123;{'\n'}
-                    {'                '}view.holder.<span className="token-function">unlockCanvasAndPost</span>(canvas){'\n'}
-                    {'            '}&#125;{'\n'}
-                    {'        '}&#125;{'\n'}
+                    <span className="token-comment">// Android Autonomous Device Agent & UI Task Automator</span>{'\n'}
+                    <span className="token-keyword">class</span> <span className="token-function">AutonomousDeviceAgentService</span> : <span className="token-variable">AccessibilityService</span>() &#123;{'\n'}
+                    {'  '}<span className="token-keyword">override fun</span> <span className="token-function">onAccessibilityEvent</span>(event: <span className="token-variable">AccessibilityEvent</span>) &#123;{'\n'}
+                    {'    '}<span className="token-keyword">val</span> rootNode = rootInActiveWindow ?: <span className="token-keyword">return</span>{'\n'}
+                    {'    '}<span className="token-comment">// OmniDroid AI parses view hierarchies & automates cross-app workflows</span>{'\n'}
+                    {'    '}mobileAgentEngine.<span className="token-function">executeActionPlan</span>(rootNode) &#123; step -&gt;{'\n'}
+                    {'      '}<span className="token-keyword">when</span> (step.type) &#123;{'\n'}
+                    {'        '}TaskType.LAUNCH_APP  -&gt; packageManager.<span className="token-function">getLaunchIntentForPackage</span>(step.pkg)?.<span className="token-function">let</span>(::startActivity){'\n'}
+                    {'        '}TaskType.TAP_ELEMENT -&gt; rootNode.<span className="token-function">findAccessibilityNodeInfosByViewId</span>(step.targetId).firstOrNull()?.<span className="token-function">performAction</span>(ACTION_CLICK){'\n'}
+                    {'        '}TaskType.TYPE_TEXT   -&gt; rootNode.<span className="token-function">findAccessibilityNodeInfosByViewId</span>(step.targetId).firstOrNull()?.<span className="token-function">performAction</span>(ACTION_SET_TEXT){'\n'}
+                    {'      '}&#125;{'\n'}
                     {'    '}&#125;{'\n'}
+                    {'  '}&#125;{'\n'}
                     &#125;
                   </code>
                 </pre>

@@ -129,7 +129,7 @@ export const SkillsMatrix = () => {
                             <span className="text-[10px] font-mono font-bold text-slate-300">
                               {skill.pct}%
                             </span>
-                            <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-black/40 text-slate-400 border border-white/5">
+                            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-black/40 text-slate-400 border border-white/5">
                               {skill.level}
                             </span>
                           </div>

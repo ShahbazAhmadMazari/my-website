@@ -91,9 +91,21 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:text-white transition-all flex items-center gap-2 text-xs"
+                title="Auto Fill From Excel on Chrome Web Store"
               >
                 <Sparkles className="w-4 h-4 text-brand-cyan" />
-                <span>Chrome Store</span>
+                <span>Auto Fill (CWS)</span>
+              </a>
+
+              <a
+                href={profileData.socials.chromeStore2}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:text-white transition-all flex items-center gap-2 text-xs"
+                title="Fiverr Inbox Notifier on Chrome Web Store"
+              >
+                <Sparkles className="w-4 h-4 text-brand-emerald" />
+                <span>Notifier (CWS)</span>
               </a>
 
               <a

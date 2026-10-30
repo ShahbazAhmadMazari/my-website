@@ -59,21 +59,16 @@ export async function POST(req: Request) {
     headers: { 'Content-Type': 'text/event-stream' }
   });
 }`,
-    mobile: `// Native Android Canvas Physics Loop
-class FlightCombatLoop(private val view: SurfaceView) : Runnable {
-    @Volatile private var isRunning = true
-    
-    override fun run() {
-        while (isRunning) {
-            val canvas = view.holder.lockCanvas() ?: continue
-            try {
-                synchronized(view.holder) {
-                    jetPhysics.update(deltaTime = 0.016f)
-                    weaponSystem.detectCollisions()
-                    renderer.drawFrame(canvas)
-                }
-            } finally {
-                view.holder.unlockCanvasAndPost(canvas)
+    mobile: `// Android Autonomous Device Agent & UI Automator
+class AutonomousDeviceAgentService : AccessibilityService() {
+    override fun onAccessibilityEvent(event: AccessibilityEvent) {
+        val rootNode = rootInActiveWindow ?: return
+        // OmniDroid AI parses view hierarchies & automates cross-app actions
+        mobileAgentEngine.executeActionPlan(rootNode) { step ->
+            when (step.type) {
+                TaskType.LAUNCH_APP  -> packageManager.getLaunchIntentForPackage(step.pkg)?.let(::startActivity)
+                TaskType.TAP_ELEMENT -> rootNode.findAccessibilityNodeInfosByViewId(step.targetId).firstOrNull()?.performAction(ACTION_CLICK)
+                TaskType.TYPE_TEXT   -> rootNode.findAccessibilityNodeInfosByViewId(step.targetId).firstOrNull()?.performAction(ACTION_SET_TEXT)
             }
         }
     }
@@ -87,6 +82,8 @@ class FlightCombatLoop(private val view: SurfaceView) : Runnable {
   };
 
   const techBadges = [
+    { name: 'Autonomous Mobile AI', category: '2026 Tech' },
+    { name: 'Extension → Mobile', category: 'Migration' },
     { name: 'React 18', category: 'Frontend' },
     { name: 'Next.js 14', category: 'Full-Stack' },
     { name: 'Android Kotlin', category: 'Mobile' },

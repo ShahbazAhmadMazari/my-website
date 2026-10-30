@@ -1,25 +1,48 @@
 export const servicesData = [
   {
-    id: "web-dev",
-    title: "Full-Stack Web Application Development",
-    shortTitle: "Web Applications",
-    icon: "Globe",
-    color: "cyan",
-    badge: "Scalable SaaS & Platforms",
-    turnaround: "2–3 Weeks",
+    id: "autonomous-mobile-agent",
+    title: "Autonomous Mobile App & Device AI Assistants",
+    shortTitle: "Autonomous Mobile AI",
+    icon: "Bot",
+    color: "emerald",
+    badge: "🔥 2026 Tech Breakthrough • Autonomous Agent",
+    isLatestTech: true,
+    turnaround: "1–2 Weeks",
     isPopular: true,
-    overview: "Custom, responsive, and SEO-optimized web applications engineered for scalability, speed, and high conversion.",
+    overview: "Engineering next-generation on-device autonomous AI assistants for Android that control mobile apps, navigate screens, and execute repetitive multi-step tasks hands-free.",
     deliverables: [
-      "SaaS dashboards & administrative command centers",
-      "High-conversion business & marketing websites",
-      "Modern e-commerce storefronts & checkout systems",
-      "RESTful APIs & microservices architectures",
-      "Robust database design, indexing & ORM setup",
-      "Secure user authentication (JWT, OAuth, RBAC)",
-      "Seamless third-party API & webhook integrations"
+      "OS-level Accessibility Service & UI Automator integration for zero-touch app control",
+      "Multimodal Vision-Language Model (Gemini) screen element parsing & semantic action dispatch",
+      "Cross-app automation pipelines (e.g. messaging, ride booking, order placement, form filling)",
+      "Floating action bubble widget with live task execution telemetry and stop controls",
+      "Voice command activation with offline speech-to-intent local processing",
+      "Biometric guardrails & human confirmation checkpoints for sensitive financial/data actions"
     ],
-    technologies: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "RESTful APIs"],
-    stats: "Lighthouse 95+ • Sub-second TTFB"
+    technologies: ["Android Kotlin", "Accessibility API", "UI Automator", "Google Gemini Multimodal", "On-Device OCR", "Coroutines"],
+    stats: "Hands-Free OS Control • 2026 Next-Gen AI"
+  },
+  {
+    id: "extension-to-mobile",
+    title: "Convert Chrome Extension to Mobile App",
+    shortTitle: "Extension → Mobile App",
+    icon: "ArrowRightLeft",
+    color: "cyan",
+    badge: "⚡ 2026 Tech Innovation • Turnkey Porting",
+    isLatestTech: true,
+    turnaround: "5–10 Days Sprint",
+    isPopular: true,
+    overview: "Seamlessly port, rebuild, and transform your existing Google Chrome extension (Manifest V2/V3) into a standalone native Android or cross-platform mobile app.",
+    deliverables: [
+      "Full background service worker & script porting to native background workers",
+      "chrome.storage migration to native SQLite / Room database persistence",
+      "Popup and side panel UI redesign into fluid, touch-optimized mobile screens",
+      "Native push notifications, sound alerts, lock-screen notifications & vibrations",
+      "Native device hardware integration (battery optimization whitelist, alarms, widgets)",
+      "Secure API token handling and biometric login integration (Fingerprint / Face ID)",
+      "Google Play Store ready release build (.AAB & APK) with signing instructions"
+    ],
+    technologies: ["Android Kotlin", "Chrome MV3 Migration", "Room DB", "WorkManager", "WebViews & Bridges", "Push Notifications"],
+    stats: "100% Feature Parity • Play Store Ready"
   },
   {
     id: "browser-extensions",
@@ -43,26 +66,26 @@ export const servicesData = [
     stats: "100% Manifest V3 • Zero Latency Overhead"
   },
   {
-    id: "extension-to-mobile",
-    title: "Convert Chrome Extension to Mobile App",
-    shortTitle: "Extension → Mobile App",
-    icon: "ArrowRightLeft",
+    id: "web-dev",
+    title: "Full-Stack Web Application Development",
+    shortTitle: "Web Applications",
+    icon: "Globe",
     color: "cyan",
-    badge: "Fiverr High Demand • Turnkey Porting",
-    turnaround: "5–10 Days Sprint",
+    badge: "Scalable SaaS & Platforms",
+    turnaround: "2–3 Weeks",
     isPopular: true,
-    overview: "Seamlessly port, rebuild, and transform your existing Google Chrome extension (Manifest V2/V3) into a standalone native Android or cross-platform mobile app.",
+    overview: "Custom, responsive, and SEO-optimized web applications engineered for scalability, speed, and high conversion.",
     deliverables: [
-      "Full background service worker & script porting to native background workers",
-      "chrome.storage migration to native SQLite / Room database persistence",
-      "Popup and side panel UI redesign into fluid, touch-optimized mobile screens",
-      "Native push notifications, sound alerts, lock-screen notifications & vibrations",
-      "Native device hardware integration (battery optimization whitelist, alarms, widgets)",
-      "Secure API token handling and biometric login integration (Fingerprint / Face ID)",
-      "Google Play Store ready release build (.AAB & APK) with signing instructions"
+      "SaaS dashboards & administrative command centers",
+      "High-conversion business & marketing websites",
+      "Modern e-commerce storefronts & checkout systems",
+      "RESTful APIs & microservices architectures",
+      "Robust database design, indexing & ORM setup",
+      "Secure user authentication (JWT, OAuth, RBAC)",
+      "Seamless third-party API & webhook integrations"
     ],
-    technologies: ["Android Kotlin", "Chrome MV3 Migration", "Room DB", "WorkManager", "WebViews & Bridges", "Push Notifications"],
-    stats: "100% Feature Parity • Play Store Ready"
+    technologies: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "RESTful APIs"],
+    stats: "Lighthouse 95+ • Sub-second TTFB"
   },
   {
     id: "ai-automation",

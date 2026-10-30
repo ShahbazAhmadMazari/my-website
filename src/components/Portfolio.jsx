@@ -11,7 +11,9 @@ import {
   Award, 
   Eye, 
   MessageCircle,
-  Maximize2
+  Maximize2,
+  Flame,
+  Bot
 } from 'lucide-react';
 import { projectsData } from '../data/projects';
 
@@ -48,7 +50,9 @@ const ProjectCardImage = ({ project, onOpenProject, isOpenHouse, isCws }) => {
       ) : (
         <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-slate-900 via-brand-darker to-slate-950 border border-white/5">
           <div className="w-12 h-12 rounded-2xl bg-white/[0.05] border border-white/10 flex items-center justify-center mb-2 text-brand-cyan">
-            {project.filterCategory === 'extensions' ? (
+            {project.filterCategory === 'mobile-ai-agent' ? (
+              <Bot className="w-6 h-6 text-emerald-400" />
+            ) : project.filterCategory === 'extensions' ? (
               <Boxes className="w-6 h-6" />
             ) : (
               <FolderGit2 className="w-6 h-6" />
@@ -61,6 +65,14 @@ const ProjectCardImage = ({ project, onOpenProject, isOpenHouse, isCws }) => {
 
       {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover/frame:opacity-30 transition-opacity pointer-events-none"></div>
+
+      {/* 2026 Latest Tech Breakthrough Badge */}
+      {project.isLatestTech && (
+        <span className="absolute top-2.5 right-2.5 text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-500/95 via-red-500/95 to-purple-600/95 text-white border border-amber-300/50 backdrop-blur-md flex items-center gap-1.5 shadow-xl shadow-amber-500/30 animate-pulse z-10">
+          <Flame className="w-3.5 h-3.5 text-amber-200 fill-amber-200" />
+          <span>2026 BREAKTHROUGH</span>
+        </span>
+      )}
       
       {/* Verified Badges Overlay */}
       {isOpenHouse && (
@@ -86,8 +98,9 @@ export const Portfolio = ({ onOpenProject, onOpenInquiry }) => {
 
   const filterTabs = [
     { id: 'all', label: 'All Work', count: projectsData.length },
+    { id: 'mobile-ai-agent', label: '🤖 Autonomous Mobile AI', count: projectsData.filter(p => p.filterCategory === 'mobile-ai-agent').length },
+    { id: 'extension-to-mobile', label: '⚡ Extension → Mobile', count: projectsData.filter(p => p.filterCategory === 'extension-to-mobile').length },
     { id: 'extensions', label: 'Chrome Extensions', count: projectsData.filter(p => p.filterCategory === 'extensions').length },
-    { id: 'extension-to-mobile', label: 'Extension → Mobile', count: projectsData.filter(p => p.filterCategory === 'extension-to-mobile').length },
     { id: 'web-ai', label: 'Web & AI Apps', count: projectsData.filter(p => p.filterCategory === 'web-ai').length },
     { id: 'mobile', label: 'Mobile Apps', count: projectsData.filter(p => p.filterCategory === 'mobile').length },
     { id: 'automation', label: 'Enterprise Automation', count: projectsData.filter(p => p.filterCategory === 'automation').length },
@@ -95,9 +108,10 @@ export const Portfolio = ({ onOpenProject, onOpenInquiry }) => {
 
   // Domain path mapping for browser frame header
   const projectDomainMap = {
+    'autonomous-mobile-ai-assistant': 'omnidroid.softzen.dev/device-agent',
+    'extension-to-mobile-converter': 'mobile.softzen.dev/porting-engine',
     'auto-fill-excel': 'chrome-extension://autofill.softzen',
     'fiverr-inbox-notifier': 'chrome-extension://fiverr.notifier',
-    'extension-to-mobile-converter': 'mobile.softzen.dev/porting-engine',
     'softzen-apex': 'apex.softzen.dev/analytics',
     'jf-17-thunder-game': 'android.native://jf17.combat',
     'whatsapp-medical-ai': 'healthai.softzen.dev/gemini-rag',
@@ -147,7 +161,7 @@ export const Portfolio = ({ onOpenProject, onOpenInquiry }) => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search products by keyword (e.g. Excel, Fiverr, Kotlin, Polygon, Gemini, MV3)..."
+              placeholder="Search products by keyword (e.g. OmniDroid, Extension, Excel, Fiverr, Kotlin)..."
               className="w-full pl-11 pr-10 py-3 rounded-2xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-brand-cyan/50 focus:ring-1 focus:ring-brand-cyan/50 transition-all"
             />
             {searchQuery && (
@@ -209,12 +223,17 @@ export const Portfolio = ({ onOpenProject, onOpenInquiry }) => {
             {filteredProjects.map((project) => {
               const isCws = project.isPublishedCWS;
               const isOpenHouse = project.id === 'nextgen-tutoring-blockchain';
+              const isLatest = project.isLatestTech;
               const domainPath = projectDomainMap[project.id] || 'softzen.dev';
 
               return (
                 <div
                   key={project.id}
-                  className="glass-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between group relative overflow-hidden transition-all duration-300 hover:border-brand-cyan/40"
+                  className={`glass-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between group relative overflow-hidden transition-all duration-300 ${
+                    isLatest 
+                      ? 'border-brand-cyan/50 shadow-glow-cyan hover:border-amber-400/60 ring-1 ring-cyan-500/20' 
+                      : 'hover:border-brand-cyan/40'
+                  }`}
                 >
                   {/* Top: Browser Mockup Frame Container */}
                   <div>
@@ -252,9 +271,21 @@ export const Portfolio = ({ onOpenProject, onOpenInquiry }) => {
                       </div>
                     )}
 
+                    {/* Latest 2026 Tech Callout Badge */}
+                    {isLatest && (
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-400/10 text-amber-300 border border-amber-400/30 mb-2.5 w-fit shadow-sm">
+                        <Sparkles className="w-3 h-3 text-amber-400 animate-spin" style={{ animationDuration: '4s' }} />
+                        <span>2026 Breakthrough Tech</span>
+                      </div>
+                    )}
+
                     {/* Category Tag & Metric */}
                     <div className="flex items-center justify-between gap-3 mb-3">
-                      <span className="px-3 py-1 rounded-full text-xs font-semibold bg-brand-cyan/15 text-brand-cyan-light border border-brand-cyan/30">
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                        isLatest 
+                          ? 'bg-amber-400/15 text-amber-300 border border-amber-400/30' 
+                          : 'bg-brand-cyan/15 text-brand-cyan-light border border-brand-cyan/30'
+                      }`}>
                         {project.category}
                       </span>
 

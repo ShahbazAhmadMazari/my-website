@@ -6,8 +6,59 @@ import medicalAiMockup from '../assets/images/medical-ai-mockup.jpg';
 import nextgenMockup from '../assets/images/nextgen-openhouse.jpg';
 import fintechMockup from '../assets/images/fintech-automation-mockup.jpg';
 import extensionToMobileMockup from '../assets/images/extension-to-mobile-mockup.jpg';
+import autonomousMobileAiMockup from '../assets/images/autonomous-mobile-ai-mockup.jpg';
 
 export const projectsData = [
+  {
+    id: "autonomous-mobile-ai-assistant",
+    title: "OmniDroid AI: Autonomous Mobile Agent & Device Task Operator",
+    category: "Autonomous Mobile AI",
+    filterCategory: "mobile-ai-agent",
+    badge: "🔥 2026 Tech Breakthrough • Autonomous Agent",
+    isLatestTech: true,
+    featured: true,
+    image: autonomousMobileAiMockup,
+    tagline: "Hands-free on-device AI agent that takes full control of your mobile apps to execute multi-step tasks automatically",
+    overview: "Cutting-edge on-device autonomous AI agent for Android that executes complex user instructions by directly controlling mobile applications. Utilizing accessibility automation, real-time OCR screen perception, and on-device Multimodal LLMs, OmniDroid navigates app interfaces, taps buttons, types text, and orchestrates cross-app workflows with zero manual effort.",
+    highlights: [
+      "🤖 Deep OS & App Control: Android Accessibility Service & UI Automator integration allowing the AI to tap, type, swipe, and switch apps completely autonomously",
+      "👁️ Multimodal Screen Perception: Real-time UI element hierarchy mapping & OCR detecting input fields, buttons, and dynamic modals without requiring root access",
+      "⚡ Cross-App Workflow Execution: Execute chained multi-app commands (e.g., 'Copy order receipt from WhatsApp, open Banking app, verify transaction, and log into Google Sheets')",
+      "🎙️ Voice Command & Floating Telemetry Dock: Hands-free voice triggers and a draggable HUD displaying live real-time action telemetry ('Tapping Search', 'Filling Field', 'Task Done in 1.2s')",
+      "🔒 Biometric Guardrails & Privacy: Zero cloud leakage of sensitive data with mandatory biometric verification before financial transactions or critical app operations",
+      "📱 100% Native Android Performance: Built in modern Kotlin with Coroutines, WorkManager background execution, and Google Gemini Multimodal routing"
+    ],
+    technologies: ["Android Kotlin", "Accessibility API", "UI Automator", "Google Gemini Multimodal API", "On-Device OCR", "WorkManager", "Room DB"],
+    metrics: { stat: "0ms Manual", label: "Autonomous Hands-Free Execution" },
+    architecture: "Closed-Loop Agent Architecture: Vision-Language Model converts UI hierarchies into semantic action trees; AccessibilityNodeInfo dispatchers execute touch and gesture inputs with instant post-action visual validation.",
+    demoUrl: "#contact",
+    actionLabel: "Request Agent Demo"
+  },
+  {
+    id: "extension-to-mobile-converter",
+    title: "Chrome Extension to Native Mobile App Transformation",
+    category: "Extension → Mobile Porting",
+    filterCategory: "extension-to-mobile",
+    badge: "⚡ 2026 Tech Innovation • Turnkey Mobile Porting",
+    isLatestTech: true,
+    featured: true,
+    image: extensionToMobileMockup,
+    tagline: "Porting desktop browser extensions into high-performance native Android & iOS mobile applications",
+    overview: "Specialized turnkey engineering workflow that converts existing Chrome extensions (Manifest V2/V3) into standalone, production-ready native mobile applications. Features complete logic porting, persistent local database sync, touch-first responsive mobile UI, background services, and native push notifications.",
+    highlights: [
+      "Headless logic & background worker migration into native Android WorkManager and Foreground Services",
+      "Local storage bridge translating chrome.storage API calls seamlessly into Room / SQLite database tables",
+      "Desktop popup and sidepanel redesign into a modern, fluid native mobile layout with gesture navigation",
+      "Native push notification system with custom sound alerts, volume gain amplifier, and lock-screen triggers",
+      "WebView and Native JavascriptInterface bridge for extensions that interact with live web sessions",
+      "Ready-to-publish Google Play Store release build (.AAB) with full signing configurations and asset package"
+    ],
+    technologies: ["Kotlin", "Android Studio", "Chrome Extension MV3", "Native WebBridge", "WorkManager", "Room DB", "Push Notifications"],
+    metrics: { stat: "100%", label: "Feature Parity Achieved" },
+    architecture: "Hybrid Native-Bridge Architecture: Extension core business logic translated into Kotlin coroutines or decoupled headless JS engines with bi-directional Android Native JavascriptInterface, local Room database caching, and WorkManager background alarms.",
+    demoUrl: "#contact",
+    actionLabel: "Inquire for Conversion"
+  },
   {
     id: "auto-fill-excel",
     title: "Auto Fill From Excel – Web Form Filler",
@@ -60,30 +111,6 @@ export const projectsData = [
     demoUrl: "https://chromewebstore.google.com/detail/ioohgofepmocbefekcfpphjononkobdj?utm_source=item-share-cb",
     actionLabel: "View on Chrome Web Store",
     isPublishedCWS: true
-  },
-  {
-    id: "extension-to-mobile-converter",
-    title: "Chrome Extension to Native Mobile App Transformation",
-    category: "Extension → Mobile Porting",
-    filterCategory: "extension-to-mobile",
-    badge: "Chrome MV3 → Native Android",
-    featured: true,
-    image: extensionToMobileMockup,
-    tagline: "Porting desktop browser extensions into high-performance native Android & iOS mobile applications",
-    overview: "Specialized turnkey engineering workflow that converts existing Chrome extensions (Manifest V2/V3) into standalone, production-ready native mobile applications. Features complete logic porting, persistent local database sync, touch-first responsive mobile UI, background services, and native push notifications.",
-    highlights: [
-      "Headless logic & background worker migration into native Android WorkManager and Foreground Services",
-      "Local storage bridge translating chrome.storage API calls seamlessly into Room / SQLite database tables",
-      "Desktop popup and sidepanel redesign into a modern, fluid native mobile layout with gesture navigation",
-      "Native push notification system with custom sound alerts, volume gain amplifier, and lock-screen triggers",
-      "WebView and Native JavascriptInterface bridge for extensions that interact with live web sessions",
-      "Ready-to-publish Google Play Store release build (.AAB) with full signing configurations and asset package"
-    ],
-    technologies: ["Kotlin", "Android Studio", "Chrome Extension MV3", "Native WebBridge", "WorkManager", "Room DB", "Push Notifications"],
-    metrics: { stat: "100%", label: "Feature Parity Achieved" },
-    architecture: "Hybrid Native-Bridge Architecture: Extension core business logic translated into Kotlin coroutines or decoupled headless JS engines with bi-directional Android Native JavascriptInterface, local Room database caching, and WorkManager background alarms.",
-    demoUrl: "#contact",
-    actionLabel: "Inquire for Conversion"
   },
   {
     id: "softzen-apex",

@@ -421,11 +421,13 @@ export const ContactSection = ({ prefilledService, prefilledSubject }) => {
                       onChange={handleChange}
                       className="w-full px-4 py-2.5 rounded-xl bg-brand-dark border border-white/[0.1] focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan text-white text-sm outline-none transition-all"
                     >
+                      <option value="Autonomous Mobile AI Assistant">🔥 Autonomous Mobile AI Assistant & Device Automation (2026 Tech)</option>
+                      <option value="Convert Chrome Extension to Mobile App">⚡ Convert Chrome Extension to Mobile App (Android/iOS)</option>
                       <option value="Full-Stack Web Application Development">Full-Stack Web Application Development</option>
                       <option value="Mobile Application Development">Mobile Application Development (Android/Kotlin)</option>
                       <option value="Mobile App Extensions & Plugins">Mobile App Extensions & Plugins</option>
                       <option value="Browser Extensions & Web Automation (Manifest V3)">Browser Extensions & Web Automation (Manifest V3)</option>
-                      <option value="Convert Chrome Extension to Mobile App">Convert Chrome Extension to Mobile App (Android/iOS)</option>
+                      <option value="Convert Chrome Extension to Mobile App (Android/iOS)">Chrome Extension to Android / iOS App Porting</option>
                       <option value="AI Integration & Workflow Automation">AI Integration & Workflow Automation (Gemini / RAG)</option>
                       <option value="Custom Software Consultation">Custom Architecture / Consultation</option>
                       <option value="Other">Other Project Scope</option>

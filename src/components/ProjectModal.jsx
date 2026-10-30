@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X, ExternalLink, CheckCircle2, Cpu, ShieldCheck, ArrowRight } from 'lucide-react';
+import { X, ExternalLink, CheckCircle2, Cpu, ShieldCheck, ArrowRight, Flame, Sparkles } from 'lucide-react';
 
 export const ProjectModal = ({ project, onClose, onOpenInquiry }) => {
   const [modalImgLoaded, setModalImgLoaded] = useState(false);
@@ -60,6 +60,12 @@ export const ProjectModal = ({ project, onClose, onOpenInquiry }) => {
                 <span className="text-xs font-mono text-brand-cyan-light mt-1">{project.category}</span>
               </div>
             )}
+            {project.isLatestTech && (
+              <div className="absolute top-3 right-3 text-xs font-mono font-bold text-amber-200 bg-gradient-to-r from-amber-500/95 via-rose-600/95 to-purple-600/95 px-3.5 py-1.5 rounded-full border border-amber-300/40 backdrop-blur-md flex items-center gap-1.5 shadow-2xl animate-pulse z-20">
+                <Flame className="w-3.5 h-3.5 text-amber-200 fill-amber-200" />
+                <span>2026 TECH BREAKTHROUGH</span>
+              </div>
+            )}
             <div className="absolute bottom-3 left-3 text-xs font-mono text-emerald-300 bg-black/80 backdrop-blur-md px-3 py-1 rounded-md border border-emerald-500/40 flex items-center gap-1.5 z-10">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
               <span>
@@ -75,6 +81,12 @@ export const ProjectModal = ({ project, onClose, onOpenInquiry }) => {
 
         {/* Header Tags */}
         <div className="flex flex-wrap items-center gap-2 mb-4 pr-12">
+          {project.isLatestTech && (
+            <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center gap-1 shadow-[0_0_15px_rgba(245,158,11,0.25)]">
+              <Flame className="w-3.5 h-3.5 fill-amber-300 text-amber-300" />
+              2026 Tech Breakthrough
+            </span>
+          )}
           <span className="px-3 py-1 rounded-full text-xs font-semibold bg-brand-cyan/15 text-brand-cyan-light border border-brand-cyan/30">
             {project.category}
           </span>

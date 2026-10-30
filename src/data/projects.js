@@ -1,3 +1,11 @@
+import autofillMockup from '../assets/images/autofill-excel-mockup.jpg';
+import fiverrNotifierMockup from '../assets/images/fiverr-notifier-mockup.jpg';
+import softzenApexMockup from '../assets/images/softzen-apex-mockup.jpg';
+import jf17Mockup from '../assets/images/jf17-thunder-mockup.jpg';
+import medicalAiMockup from '../assets/images/medical-ai-mockup.jpg';
+import nextgenMockup from '../assets/images/nextgen-openhouse.jpg';
+import fintechMockup from '../assets/images/fintech-automation-mockup.jpg';
+
 export const projectsData = [
   {
     id: "auto-fill-excel",
@@ -6,7 +14,7 @@ export const projectsData = [
     filterCategory: "extensions",
     badge: "Chrome Web Store Published • Manifest V3",
     featured: true,
-    image: "/autofill-excel-mockup.jpg",
+    image: autofillMockup,
     tagline: "Automate web forms from Excel with smart column mapping, photo upload & auto-submit",
     overview: "Production Google Chrome extension built by Shahbaz Ahmad Mazari that eliminates hours of manual data entry from Excel spreadsheets (.xlsx, .xls) directly into any web form, CRM, School DCIM, ERP, or web portal with pinpoint accuracy and zero server latency.",
     highlights: [
@@ -33,7 +41,7 @@ export const projectsData = [
     filterCategory: "extensions",
     badge: "Chrome Web Store Published • Manifest V3",
     featured: true,
-    image: "/fiverr-notifier-mockup.jpg",
+    image: fiverrNotifierMockup,
     tagline: "Plays a loud custom ringtone audio on new Fiverr messages, inbox updates & order notifications",
     overview: "Never miss a message, buyer inquiry, or order update on Fiverr again! Fiverr Inbox Notifier plays a loud, customizable audio ringtone in real-time whenever you receive a new Fiverr message, inbox update, order status notification, or custom offer response. Built for both buyers and sellers to boost response rates and maintain top seller metrics.",
     highlights: [
@@ -59,7 +67,7 @@ export const projectsData = [
     filterCategory: "automation",
     badge: "Enterprise SaaS Suite",
     featured: true,
-    image: "/softzen-apex-mockup.jpg",
+    image: softzenApexMockup,
     tagline: "Enterprise workflow automation suite eliminating repetitive browser tasks",
     overview: "Flagship workflow automation suite built to eliminate manual, repetitive browser tasks and streamline operational efficiency for modern digital operators, agencies, and enterprise data teams.",
     highlights: [
@@ -81,7 +89,7 @@ export const projectsData = [
     filterCategory: "mobile",
     badge: "Native Android Action",
     featured: true,
-    image: "/jf17-thunder-mockup.jpg",
+    image: jf17Mockup,
     tagline: "High-octane aerial combat arcade game built with native Android & Kotlin",
     overview: "Native Android action arcade game built in Kotlin featuring custom physics handling, interactive controls, smooth 60 FPS rendering, and responsive air combat mechanics.",
     highlights: [
@@ -103,7 +111,7 @@ export const projectsData = [
     filterCategory: "web-ai",
     badge: "GenAI & RAG Architecture",
     featured: true,
-    image: "/medical-ai-mockup.jpg",
+    image: medicalAiMockup,
     tagline: "Conversational healthcare assistant inside an intuitive WhatsApp-inspired UI",
     overview: "Conversational healthcare application built on Next.js utilizing Google Gemini API and Retrieval-Augmented Generation (RAG) architecture inside a familiar, accessible WhatsApp chat interface.",
     highlights: [
@@ -125,7 +133,7 @@ export const projectsData = [
     filterCategory: "web-ai",
     badge: "KFUEIT Open House 2026 Showcase",
     featured: true,
-    image: "/nextgen-openhouse.jpg",
+    image: nextgenMockup,
     tagline: "Revolutionizing EdTech with RAG-driven 24/7 AI tutoring & Polygon blockchain credentialing",
     overview: "Final Year Project successfully showcased at the 2nd Industrial Open House & Career Fair at Khwaja Fareed University of Engineering & Information Technology (KFUEIT). Developed jointly by Shahbaz Ahmad Mazari & Fawad Ahmad under the supervision of Dr. Madiha Rehman. NextGen LMS bridges the gap between static digital content and active, personalized mentorship.",
     highlights: [
@@ -149,7 +157,7 @@ export const projectsData = [
     filterCategory: "automation",
     badge: "FinTech Automation",
     featured: false,
-    image: "/fintech-automation-mockup.jpg",
+    image: fintechMockup,
     tagline: "Specialized browser utilities eliminating repetitive financial transaction entries",
     overview: "Specialized automation scripts and browser utilities developed to eliminate repetitive data entry, reconcile invoices, and automate manual transaction tracking across financial portals.",
     highlights: [

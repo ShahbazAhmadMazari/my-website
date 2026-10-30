@@ -15,6 +15,71 @@ import {
 } from 'lucide-react';
 import { projectsData } from '../data/projects';
 
+// Dedicated Sub-component for Project Card Mockup with Robust Load & Error States
+const ProjectCardImage = ({ project, onOpenProject, isOpenHouse, isCws }) => {
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const [imgFailed, setImgFailed] = useState(false);
+
+  return (
+    <div 
+      className="relative aspect-video overflow-hidden cursor-pointer bg-slate-950 flex items-center justify-center select-none" 
+      onClick={() => onOpenProject(project)}
+    >
+      {/* Background Spinner/Skeleton while loading */}
+      {!imgLoaded && !imgFailed && (
+        <div className="absolute inset-0 bg-slate-900/90 flex items-center justify-center">
+          <div className="w-7 h-7 rounded-full border-2 border-brand-cyan/20 border-t-brand-cyan animate-spin"></div>
+        </div>
+      )}
+
+      {/* Main Image or Clean Fallback Card */}
+      {!imgFailed ? (
+        <img 
+          src={project.image} 
+          alt={project.title} 
+          className={`w-full h-full object-cover transition-all duration-700 ease-out group-hover/frame:scale-105 ${
+            imgLoaded ? 'opacity-100' : 'opacity-0'
+          }`} 
+          loading="lazy"
+          decoding="async"
+          onLoad={() => setImgLoaded(true)}
+          onError={() => setImgFailed(true)}
+        />
+      ) : (
+        <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-slate-900 via-brand-darker to-slate-950 border border-white/5">
+          <div className="w-12 h-12 rounded-2xl bg-white/[0.05] border border-white/10 flex items-center justify-center mb-2 text-brand-cyan">
+            {project.filterCategory === 'extensions' ? (
+              <Boxes className="w-6 h-6" />
+            ) : (
+              <FolderGit2 className="w-6 h-6" />
+            )}
+          </div>
+          <div className="text-white font-bold text-sm tracking-tight line-clamp-1">{project.title}</div>
+          <span className="text-[11px] font-mono text-brand-cyan-light mt-1">{project.category}</span>
+        </div>
+      )}
+
+      {/* Overlay gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover/frame:opacity-30 transition-opacity pointer-events-none"></div>
+      
+      {/* Verified Badges Overlay */}
+      {isOpenHouse && (
+        <span className="absolute bottom-2 left-2 text-[10px] font-mono px-2.5 py-1 rounded bg-black/85 text-emerald-300 border border-emerald-500/40 backdrop-blur-md flex items-center gap-1.5 shadow-lg z-10">
+          <Award className="w-3.5 h-3.5 text-amber-400" />
+          <span>KFUEIT Open House 2026</span>
+        </span>
+      )}
+
+      {isCws && (
+        <span className="absolute bottom-2 left-2 text-[10px] font-mono px-2.5 py-1 rounded bg-black/85 text-emerald-300 border border-emerald-500/40 backdrop-blur-md flex items-center gap-1.5 shadow-lg z-10">
+          <Boxes className="w-3.5 h-3.5 text-emerald-400" />
+          <span>Chrome Web Store Published</span>
+        </span>
+      )}
+    </div>
+  );
+};
+
 export const Portfolio = ({ onOpenProject, onOpenInquiry }) => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -176,30 +241,12 @@ export const Portfolio = ({ onOpenProject, onOpenInquiry }) => {
                         </div>
 
                         {/* High-Resolution Product Mockup Image */}
-                        <div className="relative aspect-video overflow-hidden cursor-pointer" onClick={() => onOpenProject(project)}>
-                          <img 
-                            src={project.image} 
-                            alt={project.title} 
-                            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/frame:scale-105" 
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover/frame:opacity-30 transition-opacity"></div>
-                          
-                          {/* Verified Badges Overlay */}
-                          {isOpenHouse && (
-                            <span className="absolute bottom-2 left-2 text-[10px] font-mono px-2.5 py-1 rounded bg-black/85 text-emerald-300 border border-emerald-500/40 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
-                              <Award className="w-3.5 h-3.5 text-amber-400" />
-                              <span>KFUEIT Open House 2026</span>
-                            </span>
-                          )}
-
-                          {isCws && (
-                            <span className="absolute bottom-2 left-2 text-[10px] font-mono px-2.5 py-1 rounded bg-black/85 text-emerald-300 border border-emerald-500/40 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
-                              <Boxes className="w-3.5 h-3.5 text-emerald-400" />
-                              <span>Chrome Web Store Published</span>
-                            </span>
-                          )}
-                        </div>
+                        <ProjectCardImage 
+                          project={project} 
+                          onOpenProject={onOpenProject} 
+                          isOpenHouse={isOpenHouse} 
+                          isCws={isCws} 
+                        />
                       </div>
                     )}
 

@@ -6,6 +6,7 @@ export const Navbar = ({ onOpenInquiry }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [avatarError, setAvatarError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,15 +61,18 @@ export const Navbar = ({ onOpenInquiry }) => {
           <a href="#" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-cyan to-brand-emerald p-[1.5px] shadow-glow-cyan transition-transform group-hover:scale-105">
               <div className="w-full h-full bg-brand-dark rounded-full flex items-center justify-center overflow-hidden">
-                <img 
-                  src={profileData.avatar} 
-                  alt={profileData.name} 
-                  className="w-full h-full object-cover rounded-full"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentNode.innerHTML = '<span class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan-light to-brand-emerald-light text-base tracking-tighter">SZ</span>';
-                  }}
-                />
+                {!avatarError ? (
+                  <img 
+                    src={profileData.avatar} 
+                    alt={profileData.name} 
+                    className="w-full h-full object-cover rounded-full"
+                    onError={() => setAvatarError(true)}
+                  />
+                ) : (
+                  <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan-light to-brand-emerald-light text-base tracking-tighter">
+                    SZ
+                  </span>
+                )}
               </div>
             </div>
             <div>

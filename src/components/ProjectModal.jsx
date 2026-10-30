@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { X, ExternalLink, CheckCircle2, Cpu, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export const ProjectModal = ({ project, onClose, onOpenInquiry }) => {
+  const [modalImgLoaded, setModalImgLoaded] = useState(false);
+  const [modalImgFailed, setModalImgFailed] = useState(false);
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
@@ -35,13 +38,29 @@ export const ProjectModal = ({ project, onClose, onOpenInquiry }) => {
 
         {/* Project Showcase Image if Available */}
         {project.image && (
-          <div className="mb-6 rounded-xl overflow-hidden border border-white/10 relative aspect-video">
-            <img 
-              src={project.image} 
-              alt={project.title} 
-              className="w-full h-full object-cover" 
-            />
-            <div className="absolute bottom-3 left-3 text-xs font-mono text-emerald-300 bg-black/80 backdrop-blur-md px-3 py-1 rounded-md border border-emerald-500/40 flex items-center gap-1.5">
+          <div className="mb-6 rounded-xl overflow-hidden border border-white/10 relative aspect-video bg-slate-950 flex items-center justify-center">
+            {!modalImgLoaded && !modalImgFailed && (
+              <div className="absolute inset-0 bg-slate-900/90 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full border-2 border-brand-cyan/20 border-t-brand-cyan animate-spin"></div>
+              </div>
+            )}
+            {!modalImgFailed ? (
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className={`w-full h-full object-cover transition-opacity duration-500 ${
+                  modalImgLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
+                onLoad={() => setModalImgLoaded(true)}
+                onError={() => setModalImgFailed(true)}
+              />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-slate-900 to-brand-darker">
+                <span className="text-sm font-bold text-white">{project.title}</span>
+                <span className="text-xs font-mono text-brand-cyan-light mt-1">{project.category}</span>
+              </div>
+            )}
+            <div className="absolute bottom-3 left-3 text-xs font-mono text-emerald-300 bg-black/80 backdrop-blur-md px-3 py-1 rounded-md border border-emerald-500/40 flex items-center gap-1.5 z-10">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
               <span>
                 {project.id === 'nextgen-tutoring-blockchain' 

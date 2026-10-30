@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   User, 
   GraduationCap, 
@@ -15,6 +15,7 @@ import { profileData } from '../data/profile';
 import { aboutData } from '../data/about';
 
 export const About = () => {
+  const [avatarError, setAvatarError] = useState(false);
   const principleIcons = {
     Cpu: Cpu,
     Zap: Zap,
@@ -72,15 +73,22 @@ export const About = () => {
             {/* Softzen Identity Card */}
             <div className="glass-card rounded-2xl p-7 border-l-4 border-l-brand-cyan">
               <div className="flex items-center gap-4 mb-4">
-                <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-brand-cyan/40 shrink-0">
-                  <img 
-                    src={profileData.avatar} 
-                    alt={profileData.name} 
-                    className="w-full h-full object-cover rounded-full"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-brand-cyan/40 shrink-0 bg-brand-dark flex items-center justify-center">
+                  {!avatarError ? (
+                    <img 
+                      src={profileData.avatar} 
+                      alt={profileData.name} 
+                      className="w-full h-full object-cover rounded-full"
+                      loading="lazy"
+                      decoding="async"
+                      onError={() => setAvatarError(true)}
+                    />
+                  ) : (
+                    <div className="w-full h-full rounded-full bg-gradient-to-br from-brand-cyan/20 to-brand-emerald/20 flex items-center justify-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan-light to-brand-emerald-light text-base">
+                      SZ
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-white flex items-center gap-2">

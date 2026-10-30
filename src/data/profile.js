@@ -1,3 +1,5 @@
+import profileImg from '../assets/images/profile.jpg';
+
 export const profileData = {
   name: "Shahbaz Ahmad Mazari",
   headline: "Full-Stack Engineer | Web, Mobile & Extension Development Specialist",
@@ -5,7 +7,7 @@ export const profileData = {
   brand: "Softzen",
   location: "Pakistan",
   serviceScope: "Serving Global Clients Across USA, Europe, MENA & Asia",
-  avatar: "/profile.jpg",
+  avatar: profileImg,
   education: {
     degree: "BS in Computer Science",
     institution: "Khwaja Fareed University of Engineering and Information Technology (KFUEIT)",

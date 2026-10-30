@@ -21,6 +21,7 @@ import { profileData } from '../data/profile';
 export const Hero = ({ onOpenInquiry }) => {
   const [activeCodeTab, setActiveCodeTab] = useState('extension');
   const [copied, setCopied] = useState(false);
+  const [avatarError, setAvatarError] = useState(false);
 
   const rawCodeSnippets = {
     extension: `// Manifest V3 Background Service Worker
@@ -117,12 +118,19 @@ class FlightCombatLoop(private val view: SurfaceView) : Runnable {
               <div className="absolute -inset-1.5 bg-gradient-to-r from-brand-cyan via-brand-emerald to-brand-cyan rounded-full blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
               
               {/* Avatar Frame */}
-              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-brand-dark ring-2 ring-white/10">
-                <img 
-                  src={profileData.avatar} 
-                  alt={profileData.name} 
-                  className="w-full h-full object-cover rounded-full shadow-2xl transition-transform duration-300 group-hover:scale-105"
-                />
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-brand-dark ring-2 ring-white/10 flex items-center justify-center overflow-hidden">
+                {!avatarError ? (
+                  <img 
+                    src={profileData.avatar} 
+                    alt={profileData.name} 
+                    className="w-full h-full object-cover rounded-full shadow-2xl transition-transform duration-300 group-hover:scale-105"
+                    onError={() => setAvatarError(true)}
+                  />
+                ) : (
+                  <div className="w-full h-full rounded-full bg-gradient-to-br from-brand-cyan/20 to-brand-emerald/20 flex items-center justify-center text-white font-extrabold text-2xl">
+                    SZ
+                  </div>
+                )}
                 
                 {/* Live Activity Beacon */}
                 <span className="absolute bottom-1 right-1 flex h-5 w-5" title="Available for new client projects">

@@ -40,8 +40,8 @@ export const profileData = {
     github: "https://github.com/shahbazahmadmazari",
     linkedin: "https://www.linkedin.com/in/shahbaz-ahmad-mazari-86a196247/",
     fiverr: "https://www.fiverr.com/shahbazmazari1",
-    chromeStore: "https://chromewebstore.google.com/detail/ioohgofepmocbefekcfpphjononkobdj",
-    chromeStore2: "https://chromewebstore.google.com/detail/hkgmbceffbfbgelmipallhbamdegbnik",
+    chromeStore: "https://chromewebstore.google.com/detail/hkgmbceffbfbgelmipallhbamdegbnik",
+    chromeStore2: "https://chromewebstore.google.com/detail/ioohgofepmocbefekcfpphjononkobdj",
     googleReviewsPolicy: "https://support.google.com/chrome_webstore/answer/12225786?p=cws_reviews_results&hl=en",
     website: "https://softzen.dev"
   }

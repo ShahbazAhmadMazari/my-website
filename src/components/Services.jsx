@@ -5,6 +5,7 @@ import {
   Puzzle, 
   Blocks, 
   Sparkles, 
+  ArrowRightLeft,
   CheckCircle2, 
   ArrowUpRight,
   Cpu,
@@ -22,6 +23,7 @@ export const Services = ({ onSelectService }) => {
     Puzzle: Puzzle,
     Blocks: Blocks,
     Sparkles: Sparkles,
+    ArrowRightLeft: ArrowRightLeft,
   };
 
   return (
@@ -53,7 +55,7 @@ export const Services = ({ onSelectService }) => {
                 key={service.id}
                 className={`glass-card rounded-2xl p-7 flex flex-col justify-between group relative overflow-hidden transition-all duration-300 ${
                   isEmerald ? 'glow-card-emerald' : ''
-                } ${idx === 3 || idx === 4 ? 'lg:col-span-1 md:col-span-1' : ''}`}
+                }`}
               >
                 {/* Top card gradient accent line on hover */}
                 <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${

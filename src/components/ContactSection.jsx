@@ -425,6 +425,7 @@ export const ContactSection = ({ prefilledService, prefilledSubject }) => {
                       <option value="Mobile Application Development">Mobile Application Development (Android/Kotlin)</option>
                       <option value="Mobile App Extensions & Plugins">Mobile App Extensions & Plugins</option>
                       <option value="Browser Extensions & Web Automation (Manifest V3)">Browser Extensions & Web Automation (Manifest V3)</option>
+                      <option value="Convert Chrome Extension to Mobile App">Convert Chrome Extension to Mobile App (Android/iOS)</option>
                       <option value="AI Integration & Workflow Automation">AI Integration & Workflow Automation (Gemini / RAG)</option>
                       <option value="Custom Software Consultation">Custom Architecture / Consultation</option>
                       <option value="Other">Other Project Scope</option>

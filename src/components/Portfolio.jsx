@@ -87,6 +87,7 @@ export const Portfolio = ({ onOpenProject, onOpenInquiry }) => {
   const filterTabs = [
     { id: 'all', label: 'All Work', count: projectsData.length },
     { id: 'extensions', label: 'Chrome Extensions', count: projectsData.filter(p => p.filterCategory === 'extensions').length },
+    { id: 'extension-to-mobile', label: 'Extension → Mobile', count: projectsData.filter(p => p.filterCategory === 'extension-to-mobile').length },
     { id: 'web-ai', label: 'Web & AI Apps', count: projectsData.filter(p => p.filterCategory === 'web-ai').length },
     { id: 'mobile', label: 'Mobile Apps', count: projectsData.filter(p => p.filterCategory === 'mobile').length },
     { id: 'automation', label: 'Enterprise Automation', count: projectsData.filter(p => p.filterCategory === 'automation').length },
@@ -96,6 +97,7 @@ export const Portfolio = ({ onOpenProject, onOpenInquiry }) => {
   const projectDomainMap = {
     'auto-fill-excel': 'chrome-extension://autofill.softzen',
     'fiverr-inbox-notifier': 'chrome-extension://fiverr.notifier',
+    'extension-to-mobile-converter': 'mobile.softzen.dev/porting-engine',
     'softzen-apex': 'apex.softzen.dev/analytics',
     'jf-17-thunder-game': 'android.native://jf17.combat',
     'whatsapp-medical-ai': 'healthai.softzen.dev/gemini-rag',

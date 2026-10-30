@@ -43,6 +43,28 @@ export const servicesData = [
     stats: "100% Manifest V3 • Zero Latency Overhead"
   },
   {
+    id: "extension-to-mobile",
+    title: "Convert Chrome Extension to Mobile App",
+    shortTitle: "Extension → Mobile App",
+    icon: "ArrowRightLeft",
+    color: "cyan",
+    badge: "Fiverr High Demand • Turnkey Porting",
+    turnaround: "5–10 Days Sprint",
+    isPopular: true,
+    overview: "Seamlessly port, rebuild, and transform your existing Google Chrome extension (Manifest V2/V3) into a standalone native Android or cross-platform mobile app.",
+    deliverables: [
+      "Full background service worker & script porting to native background workers",
+      "chrome.storage migration to native SQLite / Room database persistence",
+      "Popup and side panel UI redesign into fluid, touch-optimized mobile screens",
+      "Native push notifications, sound alerts, lock-screen notifications & vibrations",
+      "Native device hardware integration (battery optimization whitelist, alarms, widgets)",
+      "Secure API token handling and biometric login integration (Fingerprint / Face ID)",
+      "Google Play Store ready release build (.AAB & APK) with signing instructions"
+    ],
+    technologies: ["Android Kotlin", "Chrome MV3 Migration", "Room DB", "WorkManager", "WebViews & Bridges", "Push Notifications"],
+    stats: "100% Feature Parity • Play Store Ready"
+  },
+  {
     id: "ai-automation",
     title: "AI Integration & Workflow Automation",
     shortTitle: "AI & Workflow Automations",

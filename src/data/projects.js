@@ -5,6 +5,7 @@ import jf17Mockup from '../assets/images/jf17-thunder-mockup.jpg';
 import medicalAiMockup from '../assets/images/medical-ai-mockup.jpg';
 import nextgenMockup from '../assets/images/nextgen-openhouse.jpg';
 import fintechMockup from '../assets/images/fintech-automation-mockup.jpg';
+import extensionToMobileMockup from '../assets/images/extension-to-mobile-mockup.jpg';
 
 export const projectsData = [
   {
@@ -59,6 +60,30 @@ export const projectsData = [
     demoUrl: "https://chromewebstore.google.com/detail/ioohgofepmocbefekcfpphjononkobdj?utm_source=item-share-cb",
     actionLabel: "View on Chrome Web Store",
     isPublishedCWS: true
+  },
+  {
+    id: "extension-to-mobile-converter",
+    title: "Chrome Extension to Native Mobile App Transformation",
+    category: "Extension → Mobile Porting",
+    filterCategory: "extension-to-mobile",
+    badge: "Chrome MV3 → Native Android",
+    featured: true,
+    image: extensionToMobileMockup,
+    tagline: "Porting desktop browser extensions into high-performance native Android & iOS mobile applications",
+    overview: "Specialized turnkey engineering workflow that converts existing Chrome extensions (Manifest V2/V3) into standalone, production-ready native mobile applications. Features complete logic porting, persistent local database sync, touch-first responsive mobile UI, background services, and native push notifications.",
+    highlights: [
+      "Headless logic & background worker migration into native Android WorkManager and Foreground Services",
+      "Local storage bridge translating chrome.storage API calls seamlessly into Room / SQLite database tables",
+      "Desktop popup and sidepanel redesign into a modern, fluid native mobile layout with gesture navigation",
+      "Native push notification system with custom sound alerts, volume gain amplifier, and lock-screen triggers",
+      "WebView and Native JavascriptInterface bridge for extensions that interact with live web sessions",
+      "Ready-to-publish Google Play Store release build (.AAB) with full signing configurations and asset package"
+    ],
+    technologies: ["Kotlin", "Android Studio", "Chrome Extension MV3", "Native WebBridge", "WorkManager", "Room DB", "Push Notifications"],
+    metrics: { stat: "100%", label: "Feature Parity Achieved" },
+    architecture: "Hybrid Native-Bridge Architecture: Extension core business logic translated into Kotlin coroutines or decoupled headless JS engines with bi-directional Android Native JavascriptInterface, local Room database caching, and WorkManager background alarms.",
+    demoUrl: "#contact",
+    actionLabel: "Inquire for Conversion"
   },
   {
     id: "softzen-apex",

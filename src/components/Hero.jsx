@@ -132,15 +132,15 @@ class AutonomousDeviceAgentService : AccessibilityService() {
                   )}
                 </div>
                 
-                {/* Live Activity Beacon (Placed at bottom-right corner, fully visible, outside overflow-hidden) */}
+                {/* Live Activity Beacon (Thick, vibrant, unclipped, highly visible active dot) */}
                 <span 
-                  className="absolute bottom-0 right-0 z-20 flex h-6 w-6 items-center justify-center" 
-                  title="Available for new client projects"
+                  className="absolute bottom-0 right-0 sm:bottom-0.5 sm:right-0.5 z-20 flex h-7 w-7 items-center justify-center" 
+                  title="Active & Available for new client projects"
                   aria-label="Online and available for client projects"
                 >
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-80"></span>
-                  <span className="relative inline-flex rounded-full h-4.5 w-4.5 bg-emerald-500 border-2 border-slate-950 items-center justify-center shadow-lg shadow-emerald-500/50">
-                    <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-85"></span>
+                  <span className="relative inline-flex rounded-full h-5 sm:h-6 w-5 sm:w-6 bg-[#10b981] border-[3px] border-[#05070d] items-center justify-center shadow-[0_0_16px_#10b981,0_0_6px_#34d399]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white shadow-sm"></span>
                   </span>
                 </span>
               </div>

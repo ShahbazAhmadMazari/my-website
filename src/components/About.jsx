@@ -92,10 +92,12 @@ export const About = () => {
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
                   </div>
-                  {/* Active Beacon */}
-                  <span className="absolute bottom-0 right-0 z-10 flex h-3.5 w-3.5 items-center justify-center" title="Active">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-brand-dark"></span>
+                  {/* Thick Active Beacon */}
+                  <span className="absolute -bottom-0.5 -right-0.5 z-10 flex h-4 w-4 items-center justify-center" title="Active & Available">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-85"></span>
+                    <span className="relative inline-flex rounded-full h-4 w-4 bg-[#10b981] border-[2.5px] border-brand-dark shadow-[0_0_8px_#10b981] items-center justify-center">
+                      <span className="w-1 h-1 rounded-full bg-white"></span>
+                    </span>
                   </span>
                 </div>
                 <div>
@@ -154,28 +156,30 @@ export const About = () => {
             </p>
           </div>
 
-          <div className="relative border-l border-white/15 ml-4 sm:ml-32 space-y-8 pl-6 sm:pl-8">
+          <div className="relative border-l-2 border-brand-cyan/20 ml-6 sm:ml-48 space-y-9 pl-6 sm:pl-10">
             {aboutData.milestones.map((m, mIdx) => (
               <div key={mIdx} className="relative group">
-                {/* Year Pill on Left for desktop */}
-                <div className="hidden sm:block absolute -left-36 top-1 w-28 text-right font-mono text-xs font-semibold text-brand-cyan-light">
-                  {m.year}
+                {/* Year Badge on Left for Desktop (Ample width, never overlaps circle node) */}
+                <div className="hidden sm:flex items-center justify-end absolute -left-[230px] top-2 w-44 text-right pr-4 font-mono text-xs font-bold text-brand-cyan-light whitespace-nowrap">
+                  <span className="px-3 py-1 rounded-md bg-brand-surface/90 border border-white/10 text-slate-200 shadow-sm group-hover:border-brand-cyan/40 group-hover:text-brand-cyan-light group-hover:shadow-[0_0_12px_rgba(6,182,212,0.25)] transition-all">
+                    {m.year}
+                  </span>
                 </div>
 
-                {/* Timeline node icon */}
-                <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-brand-dark border-2 border-brand-cyan group-hover:bg-brand-cyan group-hover:scale-125 transition-all"></div>
+                {/* Timeline Node Icon (Centered on vertical line) */}
+                <div className="absolute -left-[31px] sm:-left-[49px] top-2.5 w-4 h-4 rounded-full bg-brand-dark border-2 border-brand-cyan group-hover:bg-brand-cyan group-hover:border-white transition-all shadow-[0_0_10px_rgba(6,182,212,0.6)] z-10"></div>
 
                 {/* Mobile Year Badge */}
-                <div className="sm:hidden inline-block mb-1 px-2.5 py-0.5 rounded-full bg-white/[0.05] text-[11px] font-mono text-brand-cyan">
+                <div className="sm:hidden inline-block mb-2 px-3 py-0.5 rounded-full bg-brand-cyan/15 border border-brand-cyan/30 text-xs font-mono font-bold text-brand-cyan-light">
                   {m.year}
                 </div>
 
                 {/* Content Card */}
-                <div className="glass-panel p-5 rounded-xl border border-white/[0.08] group-hover:border-brand-cyan/30 transition-colors">
-                  <h4 className="text-base font-bold text-white mb-0.5 group-hover:text-brand-cyan-light transition-colors">
+                <div className="glass-panel p-5 sm:p-6 rounded-xl border border-white/[0.08] group-hover:border-brand-cyan/35 transition-colors">
+                  <h4 className="text-base sm:text-lg font-bold text-white mb-0.5 group-hover:text-brand-cyan-light transition-colors">
                     {m.title}
                   </h4>
-                  <div className="text-xs font-medium text-brand-emerald-light mb-2">
+                  <div className="text-xs font-semibold text-brand-emerald-light mb-2 font-mono">
                     {m.organization}
                   </div>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">

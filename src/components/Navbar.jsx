@@ -59,21 +59,29 @@ export const Navbar = ({ onOpenInquiry }) => {
           
           {/* Brand Logo & Name */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-cyan to-brand-emerald p-[1.5px] shadow-glow-cyan transition-transform group-hover:scale-105">
-              <div className="w-full h-full bg-brand-dark rounded-full flex items-center justify-center overflow-hidden">
-                {!avatarError ? (
-                  <img 
-                    src={profileData.avatar} 
-                    alt={profileData.name} 
-                    className="w-full h-full object-cover rounded-full"
-                    onError={() => setAvatarError(true)}
-                  />
-                ) : (
-                  <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan-light to-brand-emerald-light text-base tracking-tighter">
-                    SZ
-                  </span>
-                )}
+            <div className="relative">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-cyan to-brand-emerald p-[1.5px] shadow-glow-cyan transition-transform group-hover:scale-105">
+                <div className="w-full h-full bg-brand-dark rounded-full flex items-center justify-center overflow-hidden">
+                  {!avatarError ? (
+                    <img 
+                      src={profileData.avatar} 
+                      alt={profileData.name} 
+                      className="w-full h-full object-cover rounded-full"
+                      onError={() => setAvatarError(true)}
+                    />
+                  ) : (
+                    <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan-light to-brand-emerald-light text-base tracking-tighter">
+                      SZ
+                    </span>
+                  )}
+                </div>
               </div>
+              
+              {/* Thick Active Green Status Dot */}
+              <span className="absolute -bottom-0.5 -right-0.5 z-10 flex h-3.5 w-3.5 items-center justify-center" title="Active & Available">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-90"></span>
+                <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#10b981] border-2 border-brand-dark shadow-[0_0_8px_#10b981]"></span>
+              </span>
             </div>
             <div>
               <div className="flex items-center gap-2">

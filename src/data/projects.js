@@ -82,7 +82,7 @@ export const projectsData = [
     technologies: ["Chrome Extensions API (Manifest V3)", "JavaScript (ES6+)", "xlsx.js", "DOM Observers", "RTL Localization", "Chrome Storage"],
     metrics: { stat: "10x", label: "Data Entry Workflow Speedup" },
     architecture: "Manifest V3 architecture featuring local binary array buffer parsing for Excel, content script DOM injection for visual mapping badges, floating draggable control dock, and persistent session state in chrome.storage.",
-    demoUrl: "https://chromewebstore.google.com/detail/hkgmbceffbfbgelmipallhbamdegbnik?utm_source=item-share-cb",
+    demoUrl: "https://chromewebstore.google.com/detail/hkgmbceffbfbgelmipallhbamdegbnik?utm_source=item-share-cp",
     actionLabel: "View on Chrome Web Store",
     isPublishedCWS: true
   },
@@ -108,7 +108,7 @@ export const projectsData = [
     technologies: ["Chrome Extensions API (Manifest V3)", "Web Audio API (Gain Node)", "WebSockets", "JavaScript (ES6+)", "Chrome Storage API"],
     metrics: { stat: "300%", label: "Audio Volume Amplifier" },
     architecture: "Manifest V3 background worker architecture that monitors WebSocket network frames and DOM title mutations, piping audio through Web Audio API GainNodes with local sound caching in Chrome Storage.",
-    demoUrl: "https://chromewebstore.google.com/detail/ioohgofepmocbefekcfpphjononkobdj?utm_source=item-share-cb",
+    demoUrl: "https://chromewebstore.google.com/detail/ioohgofepmocbefekcfpphjononkobdj?utm_source=item-share-cp",
     actionLabel: "View on Chrome Web Store",
     isPublishedCWS: true
   },

@@ -1,7 +1,7 @@
 export const aboutData = {
   narrative: [
     "I am Shahbaz Ahmad Mazari, a Full-Stack Engineer, Mobile App Developer, and Browser Automation Specialist based in Pakistan, serving global clients. As the founder of Softzen, my focus is bridging the gap between raw engineering horsepower and practical, high-value business outcomes.",
-    "My journey began with a deep curiosity for computing at Khwaja Fareed University of Engineering and Information Technology (KFUEIT), where I am pursuing my BS in Computer Science (Class of 2026). Rather than limiting myself to theoretical exercises, I immediately began building production-grade software that solves real friction in daily workflows.",
+    "My journey began with a deep curiosity for computing at Khwaja Fareed University of Engineering and Information Technology (KFUEIT), where I graduated with my BS in Computer Science (2022–2026, CGPA 3.59). Rather than limiting myself to theoretical exercises, I immediately began building production-grade software that solves real friction in daily workflows.",
     "Over the years, I have engineered full-cycle web applications, architected native Android games and utility apps, built Chrome Web Store published extensions with Manifest V3, and designed automated AI pipelines with Google Gemini and Groq.",
     "My engineering philosophy is simple: write maintainable code, eliminate unnecessary manual human effort through automation, and maintain crystal-clear, transparent communication with clients from initial concept to post-launch support."
   ],
@@ -49,9 +49,9 @@ export const aboutData = {
     },
     {
       year: "2022 - 2026",
-      title: "BS in Computer Science",
+      title: "BS in Computer Science — Graduated",
       organization: "Khwaja Fareed University of Engineering and Information Technology (KFUEIT)",
-      description: "Rigorous coursework in Data Structures, Algorithms, Computer Architecture, Distributed Systems, Software Engineering, and Database Systems."
+      description: "Graduated 2026 — CGPA 3.59 / 4.00. Rigorous coursework in Data Structures, Algorithms, Computer Architecture, Distributed Systems, Software Engineering, and Database Systems."
     },
     {
       year: "2023",

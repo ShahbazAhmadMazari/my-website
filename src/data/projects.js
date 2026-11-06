@@ -199,8 +199,8 @@ export const projectsData = [
     technologies: ["MERN Stack", "Python", "RAG Pipeline", "Vector Search", "Polygon Blockchain", "Solidity", "Tailwind CSS", "MongoDB"],
     metrics: { stat: "Polygon", label: "On-Chain Verified Credentials" },
     architecture: "Hybrid Web2/Web3 microservices: React + Tailwind frontend connecting to Node/Express REST API and MongoDB for LMS state, integrated with Python vector embeddings for RAG AI tutoring, and Polygon smart contracts for on-chain credential hashing.",
-    demoUrl: "https://www.linkedin.com/in/shahbaz-ahmad-mazari-86a196247/",
-    actionLabel: "View Showcase on LinkedIn"
+    demoUrl: "https://nextgen-lms-navy.vercel.app/",
+    actionLabel: "View Live Site"
   },
   {
     id: "jopay-lpay-auto",

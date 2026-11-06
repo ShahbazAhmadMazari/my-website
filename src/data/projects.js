@@ -82,7 +82,7 @@ export const projectsData = [
     technologies: ["Chrome Extensions API (Manifest V3)", "JavaScript (ES6+)", "xlsx.js", "DOM Observers", "RTL Localization", "Chrome Storage"],
     metrics: { stat: "10x", label: "Data Entry Workflow Speedup" },
     architecture: "Manifest V3 architecture featuring local binary array buffer parsing for Excel, content script DOM injection for visual mapping badges, floating draggable control dock, and persistent session state in chrome.storage.",
-    demoUrl: "https://chromewebstore.google.com/detail/hkgmbceffbfbgelmipallhbamdegbnik?utm_source=item-share-cp",
+    demoUrl: "https://chromewebstore.google.com/detail/hkgmbceffbfbgelmipallhbamdegbnik?utm_source=item-share-cb",
     actionLabel: "View on Chrome Web Store",
     isPublishedCWS: true
   },

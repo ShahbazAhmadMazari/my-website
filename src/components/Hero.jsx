@@ -14,7 +14,8 @@ import {
   ShieldCheck,
   Clock,
   ExternalLink,
-  MessageCircle
+  MessageCircle,
+  Download
 } from 'lucide-react';
 import { profileData } from '../data/profile';
 
@@ -220,7 +221,8 @@ class AutonomousDeviceAgentService : AccessibilityService() {
             >
               <MessageCircle className="w-5 h-5 fill-[#25D366] text-[#25D366]" />
               <span>WhatsApp Direct</span>
-            </a>
+        </a>
+              <a href="/Shahbaz_Ahmad_Mazari_CV.pdf" download="Shahbaz_Ahmad_Mazari_CV.pdf" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl glass-panel border border-white/15 text-white font-semibold text-base hover:bg-white/[0.08] hover:border-brand-cyan/40 transition-all hover:scale-[1.02] active:scale-[0.98]"><Download className="w-5 h-5 text-brand-cyan-light" /><span>Download CV</span</a>a>
           </div>
 
           {/* Tech Stack Ribbon / Pill Carousel */}
